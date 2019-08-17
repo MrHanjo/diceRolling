@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    body {
+      background: black;
+      align-content: center;
+    }
+    button {
+      padding: 20px;
+      margin-left: 50%;
+    }
+    #rnd, #demo {
+      margin-top: 3%;
+      margin-left: 46%;
+      color: blanchedalmond;
+      font-size: 2em;
+    }
+    img {
+      margin-top: 8%;
+      margin-left: 46%;
+    } 
+    </style>
+  </head>
+
+  <body>
+  <p>Click the button to display a random number.</p>
+  <button onclick="myFunction()">Try it</button>
+  <p id="demo"></p>
+  <p id="rnd"></p>
+  <img id="ansA" src="" width="150px"></img>
+
+    <script>
+      function myFunction() {
+        let die = new Audio('DICE/DiceSound.wav'); 
+        let rollem = function () {
+          let d = Math.random() * 6;
+          // document.getElementById("demo").innerHTML = d;
+          let r = Math.round(d);
+          document.getElementById("rnd").innerHTML = r;        
+          
+          if (r <= 1) {
+            //  block of code to be executed if the condition is true
+            document.getElementById("ansA").src = ("DICE/one.jpg")
+          } 
+          else if (r == 2) { 
+            //  block of code to be executed if the condition is 3
+            document.getElementById("ansA").src = ("DICE/two.jpg")
+          }
+          else if (r == 3) { 
+            //  block of code to be executed if the condition is 3
+            document.getElementById("ansA").src = ("DICE/three.jpg")
+          }
+          else if (r == 4) { 
+            //  block of code to be executed if the condition is 3
+            document.getElementById("ansA").src = ("DICE/four.jpg")
+          }
+          else if (r == 5) { 
+            //  block of code to be executed if the condition is 3
+            document.getElementById("ansA").src = ("DICE/five.jpg")
+          }
+          else { 
+            //  block of code to be executed if the condition is false
+            document.getElementById("ansA").src = ("DICE/six.jpg")
+            //so I can just make 6 of these instead of 3 and replace the text with image src's
+          }
+        }
+        die.play();
+        document.getElementById("ansA").src = ("DICE/DieRolling.gif");
+        setTimeout(rollem, 1500);
+      }
+    </script>
+
+  </body>
+</html>
